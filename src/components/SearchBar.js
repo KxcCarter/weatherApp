@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const SearchBar = (props) => {
-  const [city, setCity] = useState();
+  const [city, setCity] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();

@@ -5,7 +5,6 @@ import './App.css';
 // apis
 import findCity from './apis/findCity';
 import accuWeatherAPI from './apis/accuWeatherAPI';
-import giphy from './apis/giphy';
 
 // Components
 import SearchBar from './components/SearchBar';
@@ -16,7 +15,6 @@ import WeatherDisplay from './components/WeatherDisplay';
 function App() {
   const [weather, setWeather] = useState(null);
   const [cityList, setCityList] = useState([]);
-  const [selectedCity, setSelectedCity] = useState(null);
   const [fullLocationName, setFullLocationName] = useState('');
 
   const onCitySubmit = async (city) => {
@@ -27,8 +25,6 @@ function App() {
     });
 
     setCityList(response.data);
-
-    setSelectedCity(response.data[0]);
   };
 
   const onCitySelect = async (locationKey, name) => {
