@@ -1,6 +1,5 @@
 import axios from 'axios';
-
-const KEY = '1YGYXIIZtcSSk9iZcRgzHRNHe82tT1Ba';
+import KEYS from './API_Keys';
 
 export default axios.create({
   baseURL:
@@ -9,6 +8,6 @@ export default axios.create({
     language: 'en-us',
     details: true,
     metric: false,
-    apikey: KEY,
+    apikey: KEYS.accuweather,
   },
 });

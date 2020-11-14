@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import findCity from '../apis/findCity';
 
 const SearchBar = (props) => {
   const [city, setCity] = useState();
@@ -8,12 +7,13 @@ const SearchBar = (props) => {
     event.preventDefault();
 
     props.onCitySubmit(city);
+    setCity('');
   };
 
   return (
-    <div className="ui segment search-bar">
+    <div className="ui segment search-bar" style={{ marginTop: '10px' }}>
       <form className="ui form" onSubmit={handleSubmit}>
-        <div className="ui field">
+        <div className="field">
           <label htmlFor="citySearch">City Search</label>
           <input
             id="citySearch"
