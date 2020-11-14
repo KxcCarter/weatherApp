@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import './App.css';
 
+import logo from './images/accuWeather_logo.png';
+
 // apis
 import accuWeather from './apis/accuWeather';
 
@@ -34,7 +36,10 @@ function App() {
 
   return (
     <div className="ui container">
-      <h1 className="ui header">5-day Weather Forecast</h1>
+      <div className="logo-header">
+        <h1 className="ui header">5-day Weather Forecast</h1>
+        <img src={logo} alt="accuWeather Logo" className="ui image medium" />
+      </div>
       <SearchBar onCitySubmit={onCitySubmit} />
       <CityList cityList={cityList} onCitySelect={onCitySelect} />
 

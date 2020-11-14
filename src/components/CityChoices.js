@@ -1,5 +1,4 @@
 import React from 'react';
-import './CityChoices.css';
 
 const style = {
   cursor: 'pointer',

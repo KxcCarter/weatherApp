@@ -15,7 +15,7 @@ const WeatherDisplay = ({ weather, locationName }) => {
     );
   });
 
-  if (!weather) {
+  if (!weather[0]) {
     return (
       <div className="ui segment">
         <div className="ui message">
