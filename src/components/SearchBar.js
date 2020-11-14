@@ -19,7 +19,7 @@ const SearchBar = (props) => {
             id="citySearch"
             type="text"
             value={city}
-            placeholder="Enter a city name"
+            placeholder="Enter a city name and press 'Enter'"
             onChange={(e) => setCity(e.target.value)}
           />
         </div>

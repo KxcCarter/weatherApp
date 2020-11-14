@@ -3,12 +3,10 @@ import React, { useState } from 'react';
 import './App.css';
 
 // apis
-import findCity from './apis/findCity';
-import accuWeatherAPI from './apis/accuWeatherAPI';
+import accuWeather from './apis/accuWeather';
 
 // Components
 import SearchBar from './components/SearchBar';
-
 import CityList from './components/CityList';
 import WeatherDisplay from './components/WeatherDisplay';
 
@@ -18,7 +16,7 @@ function App() {
   const [fullLocationName, setFullLocationName] = useState('');
 
   const onCitySubmit = async (city) => {
-    const response = await findCity.get('/search', {
+    const response = await accuWeather.city.get('/search', {
       params: {
         q: city,
       },
@@ -28,7 +26,7 @@ function App() {
   };
 
   const onCitySelect = async (locationKey, name) => {
-    const response = await accuWeatherAPI.get(`/5day/${locationKey}`);
+    const response = await accuWeather.forecast.get(`/5day/${locationKey}`);
 
     setWeather(response.data);
     setFullLocationName(name);
