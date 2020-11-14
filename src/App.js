@@ -4,7 +4,7 @@ import './App.css';
 
 // apis
 import findCity from './apis/findCity';
-import acuweatherAPI from './apis/acuweatherAPI';
+import accuWeatherAPI from './apis/accuWeatherAPI';
 import giphy from './apis/giphy';
 
 // Components
@@ -32,7 +32,7 @@ function App() {
   };
 
   const onCitySelect = async (locationKey, name) => {
-    const response = await acuweatherAPI.get(`/5day/${locationKey}`);
+    const response = await accuWeatherAPI.get(`/5day/${locationKey}`);
 
     setWeather(response.data);
     setFullLocationName(name);
@@ -40,6 +40,7 @@ function App() {
 
   return (
     <div className="ui container">
+      <h1 className="ui header">5-day Weather Forecast</h1>
       <SearchBar onCitySubmit={onCitySubmit} />
       <CityList cityList={cityList} onCitySelect={onCitySelect} />
 
